@@ -1,22 +1,29 @@
 import sys
+import os
+
+from app.controllers.json_settings import Settings # Import Settings 
+
 from PySide6.QtWidgets import QApplication
 from PySide6.QtCore import Qt
 
 from app.controllers.main_controller import MainController
-from settings import SETTINGS
 
+os.environ["QT_FONT_DPI"] = "96"
 class MainWindow(MainController):
     def __init__(self):
         super().__init__()
-        self.apply_settings()
 
-    def apply_settings(self):
-        self.setWindowTitle(SETTINGS["app_name"])
-        self.resize(*SETTINGS["window_size"])
-        if SETTINGS["borderless"]:
-            self.setWindowFlag(Qt.FramelessWindowHint)
-        # Możesz dodać więcej ustawień tutaj
+        # Załaduj Settings
+        settings = Settings()
+        self.settings = settings.items
+        
+        
+        # Ustaw główne okno
+        self.hide_grips = True # Show/Hide resize grips
 
+        self.show()   
+        
+# Inicjalizacja okna 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
     window = MainWindow()
