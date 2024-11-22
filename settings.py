@@ -6,7 +6,3 @@ SETTINGS = {
     "theme": "app/themes/default.qss",
     "borderless": True,
 }
-
-
-
-
