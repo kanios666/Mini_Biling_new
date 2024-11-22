@@ -1,0 +1,49 @@
+Chce zbudować aplikację o poniższej strukturze folderów. 
+Założenie do projektu:
+1. Python + Pyside6 + Sqlite3 + Qt Designer
+2. Styl modern ui ze zmiana dynamiczną wyglądu poprzez wybór przez użytkownika i zaczytanie pliku themes. wybór w dalszym etapie będzie zapisywany do bazy danych per uzytkownik, chyba ze inne rozwiazanie jest preferowane 
+3. Po uruchomieniu ma się pojawić okno logowania i po poprawnym wpisaniu danych przejść do głównego okna 
+4. Struktura wyglądu okna jest w plikach ui i zaczytywana przez kod umieszczony w folderze views a ten w main.py 
+5. Odzielamy warstwę logiki od wygladu i danych. Ikony nie bedą zaczytywane prez Qt Designer i plik resources
+6. Plik settings odpowiada na określenie DPI dla cziocionki,= 96 px maksymalną wysokość i szerokośc okna, wyłączenie górnej belki, shadows okna, przyciąganie do krawędzie -główne parametry aplikacji.  
+7. Aplikacja będzie pod Windows 10 bez górnej belki ale wygladem ma przypominać apolikacje CClener ( lewa belka) 
+8. Szyfrowanie bazy danych poprzez SQLCipher (baza), zashaszowanie głownego hasła(cryptography ), bcrypt (hashowanie hasła użytkowników), 
+
+
+my_project/
+├── app/
+│   ├── ui/
+│   │   ├── main_window.ui
+│   │   ├── clients.ui
+│   │   ├── login.ui
+│   │   └── ...
+│   ├── views/
+│   │   ├── main_window.py
+│   │   ├── clients.py
+│   │   ├── login.py
+│   │   └── ...
+│   ├── controllers/
+│   │   ├── main_controller.py
+│   │   ├── clients.py
+│   │   ├── login_controller.py
+│   │   └── ...
+│   ├── models/
+│   │   ├── user_model.py
+│   │   ├── db_connection.py
+│   │   ├── clients_model.py
+│   │   ├── product_model.py
+│   │   └── ...
+│   ├── resources/
+│   │   ├── icons/
+│   │   │   ├── icon1.svg
+│   │   │   └── icon2.svg
+│   │   └── ...
+│   └── themes/
+│       ├── bright.json
+│       ├── default.json
+│       ├── dark.json
+│       └── ...
+├── database/
+│   └── database.db
+├── main.py
+└── settings.json

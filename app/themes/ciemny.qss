@@ -1,0 +1,2 @@
+# settings/themes/dark_theme.qss 
+QPushButton { background-color: #333; color: #fff; }
