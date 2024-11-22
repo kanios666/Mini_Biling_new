@@ -5,14 +5,8 @@
     "year" : 2024,
     "theme_name" : "default",
     "custom_title_bar": true,
-    "startup_size": [
-        1900,
-        720
-    ],
-    "minimum_size": [
-        1900,
-        540
-    ],
+    "startup_size": [1900, 720],
+    "minimum_size": [1900, 540],
     "lef_menu_size" : {
         "minimum" : 50,
         "maximum" : 240
