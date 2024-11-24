@@ -7,7 +7,12 @@ from app.views.login_window import Ui_LoginWindow
 class LoginController(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("Login")
+        self.ui = Ui_LoginWindow()
+        self.ui.setupUi(self)
+        
+# Pozostałe ustawienia
+        
+"""    self.setWindowTitle("Login")
         self.setGeometry(100, 100, 400, 300)
 
         self.central_widget = QWidget()
@@ -67,7 +72,7 @@ class LoginController(QMainWindow):
         self.main_window = MainController(settings)
         self.main_window.show()
         self.close()
-
+ """
 
 
 

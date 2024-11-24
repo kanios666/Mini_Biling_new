@@ -15,12 +15,12 @@ if __name__ == "__main__":
     window = LoginWindow()
     window.show()
     sys.exit(app.exec())
+ 
 
 
 
 
-""" 
-# test głównego okna
+""" # test głównego okna
 import sys
 import os
 
@@ -38,4 +38,5 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
+ 
  """
