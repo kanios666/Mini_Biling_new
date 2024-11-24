@@ -1,12 +1,10 @@
 {
     "app_name": "Mini Biling",
     "version" : "v1.0.0",
-    "copyright" : "By: Łukasz Kania",
-    "year" : 2024,
-    "theme_name" : "default",
+    "copyright" : "By: Kanios",
     "custom_title_bar": true,
-    "startup_size": [1900, 720],
-    "minimum_size": [1900, 540],
+    "startup_size": [940, 668],
+    "minimum_size": [940, 350],
     "lef_menu_size" : {
         "minimum" : 50,
         "maximum" : 240
@@ -25,5 +23,10 @@
         "family" : "Segoe UI",
         "title_size" : 10,
         "text_size" : 9
-    }
+    },
+    "themes" : {
+        "default": "themes/default.qss",
+        "dark": "themes/dark.qss",
+        "light": "themes/light.qss"
+        }    
 }

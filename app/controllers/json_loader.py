@@ -11,7 +11,7 @@ class Settings(object):
     app_path = os.path.abspath(os.getcwd())
     settings_path = os.path.normpath(os.path.join(app_path, json_file))
     if not os.path.isfile(settings_path):
-        print(f"WARNING: \"settings.json\" not found! check in the folder {settings_path}")
+        print(f"UWAGA: \"settings.json\" nie znaleziony! Sprawdź folder aplikacji {settings_path}")
     
     # INIT SETTINGS
     # ///////////////////////////////////////////////////////////////

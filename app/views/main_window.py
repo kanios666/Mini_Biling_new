@@ -1,3 +1,4 @@
+# app\views\main_window.py
 # -*- coding: utf-8 -*-
 
 ################################################################################
@@ -19,12 +20,21 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
     QStatusBar, QVBoxLayout, QWidget)
 
+from app.controllers.json_loader import Settings # Import Settings 
+
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(940, 668)
-        MainWindow.setMinimumSize(QSize(940, 60))
+            
+        # Dopisane i zmodyfikowane    
+        settings = Settings()
+        self.settings = settings.items  
+        MainWindow.resize(*self.settings["startup_size"])
+        MainWindow.setMinimumSize(QSize(*self.settings["minimum_size"]))
+        #/////
+        
         self.styl = QWidget(MainWindow)
         self.styl.setObjectName(u"styl")
         self.verticalLayout = QVBoxLayout(self.styl)
@@ -311,7 +321,7 @@ class Ui_MainWindow(object):
     # setupUi
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", (self.settings[u"app_name"]), None))
         self.btn_Menu.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.btn_tablica.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.btn_ewidencja.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
@@ -324,9 +334,9 @@ class Ui_MainWindow(object):
         self.btn_zamknij.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.lbl_gO.setText(QCoreApplication.translate("MainWindow", u"glowne Okno", None))
         self.lbl_praweMenu.setText(QCoreApplication.translate("MainWindow", u"prawe Menu", None))
-        self.lbl_autor.setText(QCoreApplication.translate("MainWindow", u" By: Kanios", None))
         self.lbl_baza.setText(QCoreApplication.translate("MainWindow", u" db: status", None))
-        self.lbl_wersja.setText(QCoreApplication.translate("MainWindow", u"ver. 0.0.1", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"TextLabel", None))
+        self.lbl_autor.setText(QCoreApplication.translate("MainWindow", (self.settings[u"copyright"]), None))
+        self.lbl_wersja.setText(QCoreApplication.translate("MainWindow", (self.settings[u"version"]), None))
     # retranslateUi
 
