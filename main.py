@@ -1,4 +1,4 @@
-import sys
+""" import sys
 import os
 
 from PySide6.QtCore import Qt 
@@ -16,12 +16,11 @@ if __name__ == "__main__":
     window = LoginWindow()
     window.show()
     sys.exit(app.exec())
- 
+  """
 
 
 
-
-""" # test głównego okna
+# test głównego okna
 import sys
 import os
 
@@ -40,4 +39,3 @@ if __name__ == "__main__":
     window.show()
     sys.exit(app.exec())
  
- """
