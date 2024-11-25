@@ -8,6 +8,20 @@ Założenie do projektu:
 6. Plik settings odpowiada na określenie DPI dla cziocionki,= 96 px maksymalną wysokość i szerokośc okna, wyłączenie górnej belki, shadows okna, przyciąganie do krawędzie -główne parametry aplikacji.  
 7. Aplikacja będzie pod Windows 10 bez górnej belki ale wygladem ma przypominać apolikacje CClener ( lewa belka) 
 8. Szyfrowanie bazy danych poprzez SQLCipher (baza), zashaszowanie głownego hasła(cryptography ), bcrypt (hashowanie hasła użytkowników), 
+9. Własny ramka aplikacji opcja Qt.FramelessWindowHint ale z zachowaniem wszystkich opcji, które umożliwia domślnie system w tym zakresie, m.in
+ - Przycisków systemowych 
+ - chwytanie myszką na pasek i okna go po pulpici, zmiana pozycji
+ - Przesuwając okno do krawędzi system domyślnie ustawia je do krawędzi
+ - Cieniowanie całego okna
+ - Przy maksmymalizacji okna powinno ono być idealnie ustawione do krawędzi 
+ - Mozliowść minimalizacji okna i przy maksymnalzacji wraca do swojego poprzedniego stanu i pozycji  przed maksymalizacją
+ - Ruszajac szybko paskiem inne aplikacje się maksymalizaują
+ - Skalowanie okna przycikiem krpek w prawym dolnym rogu 
+ - podwójne kliencie powóduje maksymalizacje 
+ - inne wbudowane 
+10. To zadanie spełnione jest przez:
+https://github.com/zhiyiYo/PyQt-Frameless-Window/tree/PySide6
+pip install PySideSix-Frameless-Window
 
 
 my_project/
@@ -47,3 +61,4 @@ my_project/
 │   └── database.db
 ├── main.py
 └── settings.json
+
