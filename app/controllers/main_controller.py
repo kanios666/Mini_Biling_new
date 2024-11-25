@@ -6,7 +6,7 @@ from app.controllers.json_loader import Settings # Import Settings
 class MainController(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_LoginWindow()
+        self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
 # Pozostałe ustawienia  
@@ -29,3 +29,6 @@ class MainController(QMainWindow):
             with open(theme_path, "r") as file:
                 stylesheet = file.read()
                 self.setStyleSheet(stylesheet) """
+
+
+#Qt.FramelessWindowHint usuwaniue obramowania

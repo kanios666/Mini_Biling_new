@@ -64,20 +64,6 @@ class WindowsFramelessWindowBase:
         """ set whether resizing is enabled """
         self._isResizeEnabled = isEnabled
 
-    def isSystemButtonVisible(self):
-        """ Returns whether the system title bar button is visible """
-        return self._isSystemButtonVisible
-
-
-    def systemTitleBarRect(self, size: QSize) -> QRect:
-        """ Returns the system title bar rect, only works for macOS
-
-        Parameters
-        ----------
-        size: QSize
-            original system title bar rect
-        """
-        return QRect(0, 0, size.width(), size.height())
 
     def nativeEvent(self, eventType, message):
         """ Handle the Windows message """
