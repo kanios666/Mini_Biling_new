@@ -68,9 +68,6 @@ class WindowsFramelessWindowBase:
         """ Returns whether the system title bar button is visible """
         return self._isSystemButtonVisible
 
-    def setSystemTitleBarButtonVisible(self, isVisible):
-        """ set the visibility of system title bar button, only works for macOS """
-        pass
 
     def systemTitleBarRect(self, size: QSize) -> QRect:
         """ Returns the system title bar rect, only works for macOS
@@ -238,11 +235,6 @@ class WindowsFramelessDialog(WindowsFramelessWindowBase, QDialog):
 
 
     
-class WindowsDupa(WindowsFramelessWindowBase, QDialog):
-    def __init__(self, parent=None):
-        super().__init__(parent=parent)
-        self._initFrameless()
-        self.titleBar.hide()  # Ukrycie paska tytułowego
 
 
 
