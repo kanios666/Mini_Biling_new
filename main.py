@@ -1,8 +1,9 @@
 import sys
 import os
 
-from PySide6.QtWidgets import QApplication
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt 
+from PySide6.QtWidgets import QApplication, QMainWindow
+
 from app.controllers.login_controller import LoginController
 
 class LoginWindow(LoginController):

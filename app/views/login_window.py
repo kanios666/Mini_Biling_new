@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'login_windowZYbKSm.ui'
+## Form generated from reading UI file 'login_windowMDCOJl.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.7.1
 ##
@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QStatusBar, QVBoxLayout, QWidget)
+    QSpacerItem, QStatusBar, QVBoxLayout, QWidget)
 
 class Ui_LoginWindow(object):
     def setupUi(self, LoginWindow):
@@ -27,17 +27,73 @@ class Ui_LoginWindow(object):
         self.styl = QWidget(LoginWindow)
         self.styl.setObjectName(u"styl")
         self.styl.setMinimumSize(QSize(0, 0))
+        self.styl.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.styl.setStyleSheet(u"/* Styl dla g\u0142\u00f3wnego okna */\n"
+"QWidget {\n"
+"    background-color: #FFFFFF;\n"
+"}\n"
+"\n"
+"/* Styl dla lewego panelu */\n"
+"QFramet#l_dol, #l_gora {\n"
+"    background-color: #1A7466;\n"
+"    color: #FFFFFF;\n"
+"}\n"
+"QLabel#lbl_l_dol, #lbl_l_gora {\n"
+"    background-color: #1A7466;\n"
+"    color: #FFFFFF;\n"
+"}\n"
+"\n"
+"/* Styl dla prawego panelu */\n"
+"QFrame#p_dol, #p_gora,#p_gora2 {\n"
+"    background-color: #F0F0F0;\n"
+"    color: FFFFFF;\n"
+"}\n"
+"\n"
+"/* Styl dla p\u00f3l tekstowych */\n"
+"QLineEdit {\n"
+"    border: none;\n"
+"    padding: 5px;\n"
+"    font-size: 14px;\n"
+"    background-color: #F0F0F0;/* Jasnoszary */\n"
+"    border-bottom: 1px solid #C4C5CD; /* Podkre\u015blenie szare*/\n"
+"}\n"
+"\n"
+"QLineEdit:focus {\n"
+"    background-color: #FFFFFF; /* Bia\u0142y po naci\u015bni\u0119ciu */\n"
+"    border-bottom: 2px solid #B2CF65; /* Podkre\u015blenie jasnozielone */\n"
+"}\n"
+"\n"
+"/* Styl dla przycisku logowania -ZALOGUJ*/\n"
+"QPushButton#btn_zaloguj {\n"
+"    background-color: #4CA"
+                        "F50;\n"
+"    color: white;\n"
+"    border: none;\n"
+"    padding: 10px;\n"
+"    text-align: center;\n"
+"    text-decoration: none;\n"
+"    display: inline-block;\n"
+"    font-size: 16px;\n"
+"    margin: 4px 2px;\n"
+"    cursor: pointer;\n"
+"}\n"
+"\n"
+"QPushButton:hover#btn_zaloguj  {\n"
+"    background-color: #45a049;\n"
+"}\n"
+"\n"
+"\n"
+"")
         self.bgApp = QFrame(self.styl)
         self.bgApp.setObjectName(u"bgApp")
-        self.bgApp.setGeometry(QRect(10, 10, 786, 563))
+        self.bgApp.setGeometry(QRect(10, 10, 780, 559))
         sizePolicy = QSizePolicy(QSizePolicy.Policy.Preferred, QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(80)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.bgApp.sizePolicy().hasHeightForWidth())
         self.bgApp.setSizePolicy(sizePolicy)
         self.bgApp.setMinimumSize(QSize(0, 0))
-        self.bgApp.setFrameShape(QFrame.Shape.StyledPanel)
-        self.bgApp.setFrameShadow(QFrame.Shadow.Raised)
+        self.bgApp.setFrameShape(QFrame.Shape.NoFrame)
         self.horizontalLayout = QHBoxLayout(self.bgApp)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
@@ -45,8 +101,7 @@ class Ui_LoginWindow(object):
         self.lewe = QFrame(self.bgApp)
         self.lewe.setObjectName(u"lewe")
         self.lewe.setMinimumSize(QSize(312, 559))
-        self.lewe.setFrameShape(QFrame.Shape.StyledPanel)
-        self.lewe.setFrameShadow(QFrame.Shadow.Raised)
+        self.lewe.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_2 = QVBoxLayout(self.lewe)
         self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
@@ -54,8 +109,7 @@ class Ui_LoginWindow(object):
         self.l_gora = QFrame(self.lewe)
         self.l_gora.setObjectName(u"l_gora")
         self.l_gora.setMinimumSize(QSize(312, 223))
-        self.l_gora.setFrameShape(QFrame.Shape.StyledPanel)
-        self.l_gora.setFrameShadow(QFrame.Shadow.Raised)
+        self.l_gora.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout_6 = QVBoxLayout(self.l_gora)
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
@@ -68,67 +122,78 @@ class Ui_LoginWindow(object):
 
         self.verticalLayout_2.addWidget(self.l_gora)
 
-        self.l_dol_ = QFrame(self.lewe)
-        self.l_dol_.setObjectName(u"l_dol_")
-        self.l_dol_.setMinimumSize(QSize(312, 336))
-        self.l_dol_.setFrameShape(QFrame.Shape.StyledPanel)
-        self.l_dol_.setFrameShadow(QFrame.Shadow.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.l_dol_)
+        self.l_dol = QFrame(self.lewe)
+        self.l_dol.setObjectName(u"l_dol")
+        self.l_dol.setMinimumSize(QSize(312, 336))
+        self.l_dol.setFrameShape(QFrame.Shape.NoFrame)
+        self.verticalLayout_3 = QVBoxLayout(self.l_dol)
         self.verticalLayout_3.setSpacing(6)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.lbl_l_dol = QLabel(self.l_dol_)
+        self.lbl_l_dol = QLabel(self.l_dol)
         self.lbl_l_dol.setObjectName(u"lbl_l_dol")
 
-        self.verticalLayout_3.addWidget(self.lbl_l_dol, 0, Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTop)
+        self.verticalLayout_3.addWidget(self.lbl_l_dol)
 
 
-        self.verticalLayout_2.addWidget(self.l_dol_)
+        self.verticalLayout_2.addWidget(self.l_dol)
 
 
-        self.horizontalLayout.addWidget(self.lewe, 0, Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignTop)
+        self.horizontalLayout.addWidget(self.lewe)
 
         self.prawe = QFrame(self.bgApp)
         self.prawe.setObjectName(u"prawe")
         self.prawe.setMinimumSize(QSize(468, 559))
-        self.prawe.setFrameShape(QFrame.Shape.StyledPanel)
-        self.prawe.setFrameShadow(QFrame.Shadow.Raised)
+        self.prawe.setFrameShape(QFrame.Shape.NoFrame)
         self.verticalLayout = QVBoxLayout(self.prawe)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.btn_close = QPushButton(self.prawe)
+        self.p_gora2 = QFrame(self.prawe)
+        self.p_gora2.setObjectName(u"p_gora2")
+        self.p_gora2.setMinimumSize(QSize(468, 28))
+        self.p_gora2.setMaximumSize(QSize(468, 28))
+        self.p_gora2.setFrameShape(QFrame.Shape.NoFrame)
+        self.horizontalLayout_2 = QHBoxLayout(self.p_gora2)
+        self.horizontalLayout_2.setSpacing(0)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
+        self.horizontalSpacer = QSpacerItem(40, 20, QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
+
+        self.horizontalLayout_2.addItem(self.horizontalSpacer)
+
+        self.btn_close = QPushButton(self.p_gora2)
         self.btn_close.setObjectName(u"btn_close")
         self.btn_close.setMinimumSize(QSize(28, 28))
         self.btn_close.setMaximumSize(QSize(28, 28))
 
-        self.verticalLayout.addWidget(self.btn_close, 0, Qt.AlignmentFlag.AlignRight)
+        self.horizontalLayout_2.addWidget(self.btn_close)
+
+
+        self.verticalLayout.addWidget(self.p_gora2, 0, Qt.AlignmentFlag.AlignRight)
 
         self.p_gora = QFrame(self.prawe)
         self.p_gora.setObjectName(u"p_gora")
         self.p_gora.setMinimumSize(QSize(468, 195))
-        self.p_gora.setFrameShape(QFrame.Shape.StyledPanel)
-        self.p_gora.setFrameShadow(QFrame.Shadow.Raised)
+        self.p_gora.setFrameShape(QFrame.Shape.NoFrame)
         self.l_opis = QLabel(self.p_gora)
         self.l_opis.setObjectName(u"l_opis")
         self.l_opis.setGeometry(QRect(1, 150, 157, 16))
 
-        self.verticalLayout.addWidget(self.p_gora, 0, Qt.AlignmentFlag.AlignLeft|Qt.AlignmentFlag.AlignBottom)
+        self.verticalLayout.addWidget(self.p_gora)
 
         self.p_dol = QFrame(self.prawe)
         self.p_dol.setObjectName(u"p_dol")
         self.p_dol.setMinimumSize(QSize(468, 336))
-        self.p_dol.setFrameShape(QFrame.Shape.StyledPanel)
-        self.p_dol.setFrameShadow(QFrame.Shadow.Raised)
+        self.p_dol.setFrameShape(QFrame.Shape.NoFrame)
         self.p_dol.setLineWidth(1)
         self.password = QLineEdit(self.p_dol)
         self.password.setObjectName(u"password")
         self.password.setGeometry(QRect(1, 40, 468, 45))
         self.password.setMinimumSize(QSize(468, 45))
         font = QFont()
-        font.setPointSize(10)
         self.password.setFont(font)
-        self.password.setEchoMode(QLineEdit.EchoMode.Password)
+        self.password.setEchoMode(QLineEdit.EchoMode.Normal)
         self.login = QLineEdit(self.p_dol)
         self.login.setObjectName(u"login")
         self.login.setGeometry(QRect(1, 1, 468, 45))
@@ -137,11 +202,11 @@ class Ui_LoginWindow(object):
         self.login.setFont(font)
         self.btn_zaloguj = QPushButton(self.p_dol)
         self.btn_zaloguj.setObjectName(u"btn_zaloguj")
-        self.btn_zaloguj.setGeometry(QRect(20, 110, 75, 40))
+        self.btn_zaloguj.setGeometry(QRect(20, 110, 111, 51))
         self.btn_zaloguj.setMinimumSize(QSize(0, 40))
-        self.btn_zaloguj.setMaximumSize(QSize(200, 40))
         self.btn_zaloguj.setSizeIncrement(QSize(0, 0))
         self.btn_zaloguj.setBaseSize(QSize(0, 0))
+        self.btn_zaloguj.setStyleSheet(u"")
 
         self.verticalLayout.addWidget(self.p_dol)
 

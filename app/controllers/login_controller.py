@@ -1,7 +1,8 @@
 # app/controllers/login_controller.py
-from PySide6.QtWidgets import QApplication, QMainWindow, QLineEdit, QPushButton, QVBoxLayout, QWidget
-from app.views.login_window import Ui_LoginWindow
+from PySide6.QtCore import Qt 
+from PySide6.QtWidgets import QMainWindow
 
+from app.views.login_window import Ui_LoginWindow
 #import bcrypt
 
 class LoginController(QMainWindow):
@@ -9,9 +10,19 @@ class LoginController(QMainWindow):
         super().__init__()
         self.ui = Ui_LoginWindow()
         self.ui.setupUi(self)
+
+        # Pozostałe ustawienia
+        #////////////////////////////////////////
         
-# Pozostałe ustawienia
+        # Usuń obramowanie okna 
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
         
+        # Obsługa przycisku zamknij
+        self.ui.btn_close.clicked.connect(self.close)
+
+
+
 """    self.setWindowTitle("Login")
         self.setGeometry(100, 100, 400, 300)
 
@@ -52,13 +63,16 @@ class LoginController(QMainWindow):
         username = self.lineEdit_username.text()
         password = self.lineEdit_password.text()
         
-        
+
     def load_texts(self, file_path):
         if os.path.isfile(file_path):
             with open(file_path, "r", encoding='utf-8') as file:
                 data = json.load(file)
-                return data.get("texts", [])
-        return []
+                texts = data.get("texts", [])
+                if texts:
+                    return random.choice(texts)
+        return None
+
 
     def change_text_down(self):
         self.current_text_index = (self.current_text_index + 1) % len(self.texts)
