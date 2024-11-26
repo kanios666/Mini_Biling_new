@@ -8,11 +8,11 @@ import win32api
 import win32con
 import win32gui
 
-from .c_structures import (ACCENT_POLICY, ACCENT_STATE, DWMNCRENDERINGPOLICY,
+from c_structures import (ACCENT_POLICY, ACCENT_STATE, DWMNCRENDERINGPOLICY,
                            DWMWINDOWATTRIBUTE, MARGINS,
                            WINDOWCOMPOSITIONATTRIB,
                            WINDOWCOMPOSITIONATTRIBDATA, DWM_BLURBEHIND)
-from .win32_utils import isGreaterEqualWin10, isGreaterEqualWin11, isCompositionEnabled
+from win32_utils import isGreaterEqualWin10, isGreaterEqualWin11, isCompositionEnabled
 
 
 
