@@ -23,7 +23,7 @@ class LoginController(FramelessDialog):
         
         
         # Obsługa txt logowania
-        self.ui.login.setFocus()
+        setFocus()
         self.setTabOrder(self.ui.login, self.ui.password) 
         
         # Obsługa przycisku zamknij

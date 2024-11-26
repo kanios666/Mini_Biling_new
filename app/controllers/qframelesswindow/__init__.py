@@ -23,6 +23,3 @@ from PySide6.QtWidgets import QDialog, QMainWindow
 from .titlebar import TitleBar, TitleBarButton, SvgTitleBarButton, StandardTitleBar, TitleBarBase
 
 from .windows import WindowsFramelessWindow as FramelessWindow
-from .windows import WindowsFramelessMainWindow as FramelessMainWindow
-from .windows import WindowsFramelessDialog as FramelessDialog
-from .windows import CustomFramelessWindow as EfektyOknaBezramkowego

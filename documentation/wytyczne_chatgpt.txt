@@ -1,12 +1,10 @@
-Chce zbudować aplikację o poniższej strukturze folderów. 
-Założenie do projektu:
+Wymagania funkcjonalne:
 1. Python + Pyside6 + Sqlite3 + Qt Designer
 2. Styl modern ui ze zmiana dynamiczną wyglądu poprzez wybór przez użytkownika i zaczytanie pliku themes. wybór w dalszym etapie będzie zapisywany do bazy danych per uzytkownik, chyba ze inne rozwiazanie jest preferowane 
 3. Po uruchomieniu ma się pojawić okno logowania i po poprawnym wpisaniu danych przejść do głównego okna 
 4. Struktura wyglądu okna jest w plikach ui i zaczytywana przez kod umieszczony w folderze views a ten w main.py 
 5. Odzielamy warstwę logiki od wygladu i danych. Ikony nie bedą zaczytywane prez Qt Designer i plik resources
-6. Plik settings odpowiada na określenie DPI dla cziocionki,= 96 px maksymalną wysokość i szerokośc okna, wyłączenie górnej belki, shadows okna, przyciąganie do krawędzie -główne parametry aplikacji.  
-7. Aplikacja będzie pod Windows 10 bez górnej belki ale wygladem ma przypominać apolikacje CClener ( lewa belka) 
+7. Aplikacja będzie pod Windows 10 bez górnej belki ale wygladem ma przypominać aplikacje CClener ( lewa belka) 
 8. Szyfrowanie bazy danych poprzez SQLCipher (baza), zashaszowanie głownego hasła(cryptography ), bcrypt (hashowanie hasła użytkowników), 
 9. Własny ramka aplikacji opcja Qt.FramelessWindowHint ale z zachowaniem wszystkich opcji, które umożliwia domślnie system w tym zakresie, m.in
  - Przycisków systemowych 
@@ -19,6 +17,13 @@ Założenie do projektu:
  - Skalowanie okna przycikiem krpek w prawym dolnym rogu 
  - podwójne kliencie powóduje maksymalizacje 
  - inne wbudowane 
+10. Wczytywanie motywów z folderu themes i dynamiczna zmiana w głownym oknie aplikacji i combobox
+
+Zaproponuj strukturę folderów/drzewa projektu oraz przykładowe nazwy plików bez listingu kodu pythona/
+Opisz każdy z folderów aby było wiadomo za co odpowiada 
+
+
+
 10. To zadanie spełnione jest przez:
 https://github.com/zhiyiYo/PyQt-Frameless-Window/tree/PySide6
 pip install PySideSix-Frameless-Window
@@ -62,3 +67,16 @@ my_project/
 ├── main.py
 └── settings.json
 
+==================================
+Python & PySide6 & Qt Desinger
+https://github.com/kanios666/Mini_Biling_new
+Mam poważny problem ze zrobieniem okna logowania bez systemowego paska ( tam gdzie jest zamknij, minmalizuj)
+Zdefiniowałem wygląd okna app\views\login_window.py na podstawie (app\ui\login_window.ui), który będzie zawierał przycisk zamknij i uchwyt do przenoszenia
+
+Probowałem zmienić pakiet \app\controllers\qframelesswindow aby spełniał to zadanie być może już to jest zaimplementowne
+1. Zdefiniowałem wygląd okna app\views\login_window.py
+2. Obsłguje go controllerem i tu chce zrobić dzieczycenie z qframelesswindow stylu bez górnego paska. 
+3. Wczytuje za pomocą pliku main.py 
+
+Potrzebuje propozycji jak do takiego tematu podchodzą profesionalni programiści 
+Może moje podejście jest implementowane ze złej strony, może zmiana musi byc wielu plikach, zapronuj rozwiązanie.

@@ -1,0 +1,13 @@
+{
+    "app_name": "Mini Biling",
+    "version": "v1.0.0",
+    "copyright": "By: Kanios",
+    "startup_size": [940, 668],
+    "minimum_size": [940, 350],
+    "database": {
+        "path": "data/baza_mb.db"
+    },
+    "themes": {
+        "default": "themes/default.qss"
+    }
+}

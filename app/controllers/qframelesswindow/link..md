@@ -1,1 +1,0 @@
-https://github.com/zhiyiYo/PyQt-Frameless-Window/tree/PySide6
