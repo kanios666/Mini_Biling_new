@@ -4,13 +4,16 @@ import os
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QMainWindow
 from app.views.login_window import Ui_LoginWindow
+from app.controllers.qframelesswindow import FramelessDialog
 
-class LoginController(QMainWindow):
+
+class LoginController(FramelessDialog):
     def __init__(self):
         super().__init__()
         self.ui = Ui_LoginWindow()
         self.ui.setupUi(self)
-
+        
+    
         # Pozostałe ustawienia
         #////////////////////////////////////////
         
@@ -41,7 +44,6 @@ class LoginController(QMainWindow):
         with open(file_path, "r", encoding="utf-8") as file:
             data = json.load(file)
             return data.get("texts", [])
-
 
 
 

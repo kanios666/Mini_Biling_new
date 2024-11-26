@@ -219,7 +219,24 @@ class WindowsFramelessDialog(WindowsFramelessWindowBase, QDialog):
         self.windowEffect.disableMaximizeButton(self.winId())
         
 
+class CustomFramelessWindow(QMainWindow):
+    """Klasa bazowa dla okien bezramkowych z efektami."""
+    
+    def __init__(self, parent=None):
+        super().__init__(parent)
 
+        # Usuń obramowanie okna
+        self.setWindowFlags(Qt.FramelessWindowHint)
+        self.setAttribute(Qt.WA_TranslucentBackground)
+
+        # Inicjalizacja efektów okna
+        self.windowEffect = WindowsWindowEffect(self)
+        self.apply_window_effects()
+
+    def apply_window_effects(self):
+        """Zastosowanie efektów wizualnych."""
+        self.windowEffect.addShadowEffect(self.winId())
+        self.windowEffect.addWindowAnimation(self.winId())
     
 
 

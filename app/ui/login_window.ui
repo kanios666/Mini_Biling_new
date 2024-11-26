@@ -21,7 +21,7 @@
     </size>
    </property>
    <property name="focusPolicy">
-    <enum>Qt::FocusPolicy::NoFocus</enum>
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">/* /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -128,7 +128,7 @@ QLineEdit:focus {
      </size>
     </property>
     <property name="frameShape">
-     <enum>QFrame::Shape::NoFrame</enum>
+     <enum>QFrame::NoFrame</enum>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <property name="spacing">
@@ -155,7 +155,7 @@ QLineEdit:focus {
         </size>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Shape::NoFrame</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <property name="spacing">
@@ -182,7 +182,7 @@ QLineEdit:focus {
            </size>
           </property>
           <property name="frameShape">
-           <enum>QFrame::Shape::NoFrame</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <widget class="QLabel" name="lbl_l_gora">
            <property name="geometry">
@@ -208,7 +208,7 @@ QLineEdit:focus {
            </size>
           </property>
           <property name="frameShape">
-           <enum>QFrame::Shape::NoFrame</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <widget class="QLabel" name="lbl_l_dol">
            <property name="geometry">
@@ -240,7 +240,7 @@ QLineEdit:focus {
         </size>
        </property>
        <property name="frameShape">
-        <enum>QFrame::Shape::NoFrame</enum>
+        <enum>QFrame::NoFrame</enum>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout">
         <property name="spacing">
@@ -273,7 +273,7 @@ QLineEdit:focus {
            </size>
           </property>
           <property name="frameShape">
-           <enum>QFrame::Shape::NoFrame</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <property name="spacing">
@@ -293,9 +293,6 @@ QLineEdit:focus {
            </property>
            <item>
             <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Orientation::Horizontal</enum>
-             </property>
              <property name="sizeHint" stdset="0">
               <size>
                <width>40</width>
@@ -319,7 +316,7 @@ QLineEdit:focus {
               </size>
              </property>
              <property name="focusPolicy">
-              <enum>Qt::FocusPolicy::NoFocus</enum>
+              <enum>Qt::NoFocus</enum>
              </property>
              <property name="text">
               <string>PushButton</string>
@@ -338,7 +335,7 @@ QLineEdit:focus {
            </size>
           </property>
           <property name="frameShape">
-           <enum>QFrame::Shape::NoFrame</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <widget class="QLabel" name="l_opis">
            <property name="geometry">
@@ -364,7 +361,7 @@ QLineEdit:focus {
            </size>
           </property>
           <property name="frameShape">
-           <enum>QFrame::Shape::NoFrame</enum>
+           <enum>QFrame::NoFrame</enum>
           </property>
           <property name="lineWidth">
            <number>1</number>
@@ -388,12 +385,13 @@ QLineEdit:focus {
             <font>
              <family>Segoe UI</family>
              <pointsize>-1</pointsize>
+             <weight>50</weight>
              <italic>false</italic>
              <bold>false</bold>
             </font>
            </property>
            <property name="echoMode">
-            <enum>QLineEdit::EchoMode::Password</enum>
+            <enum>QLineEdit::Normal</enum>
            </property>
            <property name="placeholderText">
             <string>Hasło</string>
@@ -424,6 +422,7 @@ QLineEdit:focus {
             <font>
              <family>Segoe UI</family>
              <pointsize>-1</pointsize>
+             <weight>50</weight>
              <italic>false</italic>
              <bold>false</bold>
             </font>
@@ -463,7 +462,7 @@ QLineEdit:focus {
             </size>
            </property>
            <property name="focusPolicy">
-            <enum>Qt::FocusPolicy::ClickFocus</enum>
+            <enum>Qt::NoFocus</enum>
            </property>
            <property name="styleSheet">
             <string notr="true"/>

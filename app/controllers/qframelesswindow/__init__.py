@@ -25,4 +25,4 @@ from .titlebar import TitleBar, TitleBarButton, SvgTitleBarButton, StandardTitle
 from .windows import WindowsFramelessWindow as FramelessWindow
 from .windows import WindowsFramelessMainWindow as FramelessMainWindow
 from .windows import WindowsFramelessDialog as FramelessDialog
-
+from .windows import CustomFramelessWindow as EfektyOknaBezramkowego

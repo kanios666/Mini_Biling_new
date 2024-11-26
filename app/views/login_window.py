@@ -234,10 +234,10 @@ class Ui_LoginWindow(object):
 
         self.horizontalLayout.addWidget(self.prawe)
 
-        LoginWindow.setCentralWidget(self.styl)
+        #LoginWindow.setCentralWidget(self.styl)
         self.statusbar = QStatusBar(LoginWindow)
         self.statusbar.setObjectName(u"statusbar")
-        LoginWindow.setStatusBar(self.statusbar)
+        #LoginWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(LoginWindow)
 
