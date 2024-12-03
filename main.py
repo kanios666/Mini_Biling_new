@@ -26,5 +26,4 @@ if __name__ == "__main__":
     window = LoginController()  # Logowanie z efektami
     window.show()
     sys.exit(app.exec())
-
  """
