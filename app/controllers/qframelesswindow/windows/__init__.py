@@ -1,11 +1,14 @@
 # coding:utf-8
 from ctypes import cast
 from ctypes.wintypes import LPRECT, MSG
-import win32con
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QCursor
-from PySide6.QtWidgets import QWidget
 
+import win32con
+import win32gui
+from PySide6.QtCore import Qt, QSize, QRect
+from PySide6.QtGui import QCloseEvent, QCursor
+from PySide6.QtWidgets import QApplication, QDialog, QWidget, QMainWindow
+
+from ..titlebar import TitleBar
 from ..utils import win32_utils as win_utils
 from ..utils.win32_utils import Taskbar
 from .c_structures import LPNCCALCSIZE_PARAMS
@@ -19,22 +22,68 @@ class WindowsFramelessWindowBase:
 
     def __init__(self, parent=None):
         super().__init__(parent)
-        self._isResizeEnabled = True
-        self.windowEffect = WindowsWindowEffect(self)
-        self._initFrameless()
+        self._isSystemButtonVisible = False
 
     def _initFrameless(self):
-        """ Inicjalizacja efektów okna bezramkowego """
+        self.windowEffect = WindowsWindowEffect(self)
+        self.titleBar = TitleBar(self)
+        self._isResizeEnabled = True
+
+        self.updateFrameless()
+
+        # solve issue #5
+        self.windowHandle().screenChanged.connect(self.__onScreenChanged)
+
+        self.resize(500, 500)
+        self.titleBar.raise_()
+
+    def updateFrameless(self):
+        """ update frameless window """
         self.setWindowFlags(self.windowFlags() | Qt.FramelessWindowHint)
+
+        # add DWM shadow and window animation
         self.windowEffect.addWindowAnimation(self.winId())
-        self.windowEffect.addShadowEffect(self.winId())
+        if not isinstance(self, AcrylicWindow):
+            self.windowEffect.addShadowEffect(self.winId())
+
+    def setTitleBar(self, titleBar):
+        """ set custom title bar
+
+        Parameters
+        ----------
+        titleBar: TitleBar
+            title bar
+        """
+        self.titleBar.deleteLater()
+        self.titleBar.hide()
+        self.titleBar = titleBar
+        self.titleBar.setParent(self)
+        self.titleBar.raise_()
 
     def setResizeEnabled(self, isEnabled: bool):
-        """ Włącza lub wyłącza możliwość zmiany rozmiaru """
+        """ set whether resizing is enabled """
         self._isResizeEnabled = isEnabled
 
+    def isSystemButtonVisible(self):
+        """ Returns whether the system title bar button is visible """
+        return self._isSystemButtonVisible
+
+    def setSystemTitleBarButtonVisible(self, isVisible):
+        """ set the visibility of system title bar button, only works for macOS """
+        pass
+
+    def systemTitleBarRect(self, size: QSize) -> QRect:
+        """ Returns the system title bar rect, only works for macOS
+
+        Parameters
+        ----------
+        size: QSize
+            original system title bar rect
+        """
+        return QRect(0, 0, size.width(), size.height())
+
     def nativeEvent(self, eventType, message):
-        """ Obsługuje komunikaty systemowe Windows """
+        """ Handle the Windows message """
         msg = MSG.from_address(message.__int__())
         if not msg.hWnd:
             return False, 0
@@ -46,6 +95,7 @@ class WindowsFramelessWindowBase:
             w = self.frameGeometry().width()
             h = self.frameGeometry().height()
 
+            # fixes https://github.com/zhiyiYo/PyQt-Frameless-Window/issues/98
             bw = 0 if win_utils.isMaximized(msg.hWnd) or win_utils.isFullScreen(msg.hWnd) else self.BORDER_WIDTH
             lx = xPos < bw
             rx = xPos > w - bw
@@ -76,6 +126,7 @@ class WindowsFramelessWindowBase:
             isMax = win_utils.isMaximized(msg.hWnd)
             isFull = win_utils.isFullScreen(msg.hWnd)
 
+            # adjust the size of client rect
             if isMax and not isFull:
                 ty = win_utils.getResizeBorderThickness(msg.hWnd, False)
                 rect.top += ty
@@ -85,9 +136,10 @@ class WindowsFramelessWindowBase:
                 rect.left += tx
                 rect.right -= tx
 
+            # handle the situation that an auto-hide taskbar is enabled
             if (isMax or isFull) and Taskbar.isAutoHide():
                 position = Taskbar.getPosition(msg.hWnd)
-                if position == Taskbar.TOP:
+                if position == Taskbar.LEFT:
                     rect.top += Taskbar.AUTO_HIDE_THICKNESS
                 elif position == Taskbar.BOTTOM:
                     rect.bottom -= Taskbar.AUTO_HIDE_THICKNESS
@@ -101,12 +153,13 @@ class WindowsFramelessWindowBase:
 
         return False, 0
 
-
     def __onScreenChanged(self):
         hWnd = int(self.windowHandle().winId())
         win32gui.SetWindowPos(hWnd, None, 0, 0, 0, 0, win32con.SWP_NOMOVE |
                               win32con.SWP_NOSIZE | win32con.SWP_FRAMECHANGED)
 
+    def resizeEvent(self, e):
+        self.titleBar.resize(self.width(), self.titleBar.height())
 
 
 class WindowsFramelessWindow(WindowsFramelessWindowBase, QWidget):
@@ -163,5 +216,34 @@ class AcrylicWindow(WindowsFramelessWindow):
         self.hide()
 
 
+class WindowsFramelessMainWindow(WindowsFramelessWindowBase, QMainWindow):
+    """ Frameless main window for Windows system """
+
+    def __init__(self, parent=None):
+        super().__init__(parent=parent)
+        self._initFrameless()
 
 
+class WindowsFramelessDialog(WindowsFramelessWindowBase, QDialog):
+    """ Frameless dialog for Windows system """
+
+    def __init__(self, parent=None):
+        super().__init__(parent=parent)
+        self._initFrameless()
+        self.titleBar.minBtn.hide()
+        self.titleBar.maxBtn.hide()
+        self.titleBar.setDoubleClickEnabled(False)
+        self.windowEffect.disableMaximizeButton(self.winId())
+
+
+class WindowsFramelessUI(WindowsFramelessWindowBase, QDialog):
+    """ Moja zmodyfikowana"""
+
+    def __init__(self, parent=None):
+        super().__init__(parent=parent)
+        self._initFrameless()
+        self.titleBar.minBtn.hide()
+        self.titleBar.maxBtn.hide()
+        self.titleBar.closeBtn.hide()
+        self.titleBar.setDoubleClickEnabled(False)
+        self.windowEffect.disableMaximizeButton(self.winId())

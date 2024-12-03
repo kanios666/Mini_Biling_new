@@ -12,7 +12,8 @@ from .c_structures import (ACCENT_POLICY, ACCENT_STATE, DWMNCRENDERINGPOLICY,
                            DWMWINDOWATTRIBUTE, MARGINS,
                            WINDOWCOMPOSITIONATTRIB,
                            WINDOWCOMPOSITIONATTRIBDATA, DWM_BLURBEHIND)
-from ..utils.win32_utils import isGreaterEqualWin10, isGreaterEqualWin11, isCompositionEnabled
+from .win32_utils import isGreaterEqualWin10, isGreaterEqualWin11, isCompositionEnabled
+
 
 
 class WindowsWindowEffect:

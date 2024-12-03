@@ -6,10 +6,10 @@ from PySide6.QtCore import Qt
 from PySide6.QtGui import QCursor
 from PySide6.QtWidgets import QWidget
 
-import win32_utils as win_utils
-from win32_utils import Taskbar
-from c_structures import LPNCCALCSIZE_PARAMS
-from window_effect import WindowsWindowEffect
+from app.controllers.gui import win32_utils as win_utils
+from .win32_utils import Taskbar
+from .c_structures import LPNCCALCSIZE_PARAMS
+from .window_effect import WindowsWindowEffect
 
 
 class WindowsFramelessWindowBase:

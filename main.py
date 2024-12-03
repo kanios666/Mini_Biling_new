@@ -1,16 +1,3 @@
-""" import sys
-from PySide6.QtWidgets import QApplication
-from app.controllers.login_controller import LoginController
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = LoginController()  # Logowanie z efektami
-    window.show()
-    sys.exit(app.exec())
-
- """
-
-# test głównego okna
 import sys
 import os
 
@@ -28,3 +15,16 @@ if __name__ == "__main__":
     window = MainWindow()
     window.show()
     sys.exit(app.exec())
+
+#================
+""" import sys
+from PySide6.QtWidgets import QApplication
+from app.controllers.login_controller import LoginController
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = LoginController()  # Logowanie z efektami
+    window.show()
+    sys.exit(app.exec())
+
+ """
