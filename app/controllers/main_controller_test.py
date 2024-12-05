@@ -1,14 +1,18 @@
-# app\controllers\main_controller_test.py
-from app.views.main_window_qf import CustomFramelessWindow
+# app/controllers/main_controller_test.py
+from PySide6.QtWidgets import QApplication, QWidget
+from PySide6.QtCore import Qt
+from PySide6.QtGui import QColor
+from PySide6.QtWidgets import QGraphicsDropShadowEffect
+from qframelesswindow import FramelessWindow
+from app.views.main_window import Ui_MainWindow
 
-class Controller:
+class Controller(FramelessWindow, Ui_MainWindow):
     def __init__(self):
-        self.window = None
+        super().__init__()
+        self.setupUi(self)
 
-    def show_main_window(self):
-        self.window = CustomFramelessWindow()
-        self.window.btn_zamknij.clicked.connect(self.close_main_window)  # Połącz przycisk z funkcją
-        self.window.show()
-
-    def close_main_window(self):
-        self.window.close()
+        # Ustawienie centralnego widgetu
+        central_widget = QWidget(self)
+        self.setCentralWidget(central_widget)
+        layout = QVBoxLayout(central_widget)
+        layout.addWidget(self.styl)

@@ -1,3 +1,4 @@
+# main_docelowy.py
 from PySide6.QtWidgets import QApplication
 from app.controllers.main_controller_test import Controller
 

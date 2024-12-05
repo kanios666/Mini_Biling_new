@@ -1,6 +1,6 @@
 # app/controllers/main_controller.py
 from PySide6.QtWidgets import QMainWindow
-from app.views.main_window import Ui_MainWindow
+from app.views.main_window_c import Ui_MainWindow
 from app.utilities.config_loader_json import Settings # Import Settings 
 
 class MainController(QMainWindow):

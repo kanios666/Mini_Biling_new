@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_window_testxpAFar.ui'
+## Form generated from reading UI file 'main_windowIBdsSL.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -16,14 +16,14 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
-    QMainWindow, QPushButton, QSizePolicy, QVBoxLayout,
-    QWidget)
+    QMainWindow, QPushButton, QSizePolicy, QSpacerItem,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(1062, 783)
+        MainWindow.resize(940, 668)
         MainWindow.setMinimumSize(QSize(940, 60))
         self.styl = QWidget(MainWindow)
         self.styl.setObjectName(u"styl")
@@ -52,6 +52,83 @@ class Ui_MainWindow(object):
         self.verticalLayout_6.setSpacing(0)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
         self.verticalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.lm_gora = QFrame(self.leweMenu)
+        self.lm_gora.setObjectName(u"lm_gora")
+        self.lm_gora.setMinimumSize(QSize(0, 60))
+        self.lm_gora.setFrameShape(QFrame.NoFrame)
+        self.verticalLayout_4 = QVBoxLayout(self.lm_gora)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.btn_Menu = QPushButton(self.lm_gora)
+        self.btn_Menu.setObjectName(u"btn_Menu")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.btn_Menu.sizePolicy().hasHeightForWidth())
+        self.btn_Menu.setSizePolicy(sizePolicy1)
+        self.btn_Menu.setMinimumSize(QSize(0, 45))
+        self.btn_Menu.setMaximumSize(QSize(45, 16777215))
+
+        self.verticalLayout_4.addWidget(self.btn_Menu)
+
+
+        self.verticalLayout_6.addWidget(self.lm_gora, 0, Qt.AlignTop)
+
+        self.lm_srodek = QFrame(self.leweMenu)
+        self.lm_srodek.setObjectName(u"lm_srodek")
+        self.lm_srodek.setFrameShape(QFrame.NoFrame)
+        self.verticalLayout_8 = QVBoxLayout(self.lm_srodek)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.btn_tablica = QPushButton(self.lm_srodek)
+        self.btn_tablica.setObjectName(u"btn_tablica")
+        sizePolicy1.setHeightForWidth(self.btn_tablica.sizePolicy().hasHeightForWidth())
+        self.btn_tablica.setSizePolicy(sizePolicy1)
+        self.btn_tablica.setMinimumSize(QSize(0, 45))
+        self.btn_tablica.setMaximumSize(QSize(45, 16777215))
+
+        self.verticalLayout_8.addWidget(self.btn_tablica)
+
+        self.btn_ewidencja = QPushButton(self.lm_srodek)
+        self.btn_ewidencja.setObjectName(u"btn_ewidencja")
+        sizePolicy1.setHeightForWidth(self.btn_ewidencja.sizePolicy().hasHeightForWidth())
+        self.btn_ewidencja.setSizePolicy(sizePolicy1)
+        self.btn_ewidencja.setMinimumSize(QSize(0, 45))
+        self.btn_ewidencja.setMaximumSize(QSize(45, 16777215))
+
+        self.verticalLayout_8.addWidget(self.btn_ewidencja)
+
+        self.btn_rozliczenia = QPushButton(self.lm_srodek)
+        self.btn_rozliczenia.setObjectName(u"btn_rozliczenia")
+        sizePolicy1.setHeightForWidth(self.btn_rozliczenia.sizePolicy().hasHeightForWidth())
+        self.btn_rozliczenia.setSizePolicy(sizePolicy1)
+        self.btn_rozliczenia.setMinimumSize(QSize(0, 45))
+        self.btn_rozliczenia.setMaximumSize(QSize(45, 16777215))
+
+        self.verticalLayout_8.addWidget(self.btn_rozliczenia)
+
+
+        self.verticalLayout_6.addWidget(self.lm_srodek, 0, Qt.AlignTop)
+
+        self.verticalSpacer = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer)
+
+        self.lm_dol = QFrame(self.leweMenu)
+        self.lm_dol.setObjectName(u"lm_dol")
+        self.lm_dol.setFrameShape(QFrame.NoFrame)
+        self.verticalLayout_9 = QVBoxLayout(self.lm_dol)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.btn_ustawienia = QPushButton(self.lm_dol)
+        self.btn_ustawienia.setObjectName(u"btn_ustawienia")
+        sizePolicy1.setHeightForWidth(self.btn_ustawienia.sizePolicy().hasHeightForWidth())
+        self.btn_ustawienia.setSizePolicy(sizePolicy1)
+        self.btn_ustawienia.setMinimumSize(QSize(0, 45))
+        self.btn_ustawienia.setMaximumSize(QSize(45, 16777215))
+
+        self.verticalLayout_9.addWidget(self.btn_ustawienia)
+
+
+        self.verticalLayout_6.addWidget(self.lm_dol, 0, Qt.AlignBottom)
+
 
         self.horizontalLayout.addWidget(self.leweMenu)
 
@@ -73,11 +150,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.tytul = QFrame(self.naglowek)
         self.tytul.setObjectName(u"tytul")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.tytul.sizePolicy().hasHeightForWidth())
-        self.tytul.setSizePolicy(sizePolicy1)
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.tytul.sizePolicy().hasHeightForWidth())
+        self.tytul.setSizePolicy(sizePolicy2)
         self.tytul.setFrameShape(QFrame.NoFrame)
         self.horizontalLayout_5 = QHBoxLayout(self.tytul)
         self.horizontalLayout_5.setSpacing(0)
@@ -232,6 +309,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+        self.btn_Menu.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.btn_tablica.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.btn_ewidencja.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.btn_rozliczenia.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
+        self.btn_ustawienia.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.lbl_tytul.setText(QCoreApplication.translate("MainWindow", u"Tytul", None))
         self.btn_praweMenu.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.btn_minmalize.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
