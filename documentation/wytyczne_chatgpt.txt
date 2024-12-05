@@ -19,15 +19,21 @@ Wymagania funkcjonalne:
  - inne wbudowane 
 10. Wczytywanie motywów z folderu themes i dynamiczna zmiana w głownym oknie aplikacji i combobox
 
-Zaproponuj strukturę folderów/drzewa projektu oraz przykładowe nazwy plików bez listingu kodu pythona/
-Opisz każdy z folderów aby było wiadomo za co odpowiada 
 
-
-
-10. To zadanie spełnione jest przez:
+11. To zadanie spełnione jest przez:
 https://github.com/zhiyiYo/PyQt-Frameless-Window/tree/PySide6
 pip install PySideSix-Frameless-Window
 
+12. Gotowy kod dopoprawy 
+https://github.com/kanios666/Mini_Biling_new/blob/main/app/views/main_window.py
+https://github.com/kanios666/Mini_Biling_new/blob/main/app/controllers/main_controller_test.py
+https://github.com/kanios666/Mini_Biling_new/blob/main/main_docelowy.py
+
+
+
+
+Zaproponuj strukturę folderów/drzewa projektu oraz przykładowe nazwy plików bez listingu kodu pythona/
+Opisz każdy z folderów aby było wiadomo za co odpowiada 
 
 my_project/
 ├── app/

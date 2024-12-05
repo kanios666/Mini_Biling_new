@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <widget class="QMainWindow" name="LoginWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="styl">
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* /////////////////////////////////////////////////////////////////////////////////////////////////
+
+STYL OKNA LOGOWANIA
+ZIELONY
+
+///////////////////////////////////////////////////////////////////////////////////////////////// */
+
+
+/* Styl dla głównego okna */
+QWidget {
+    background-color: #FFFFFF;
+    font: 10pt &quot;Segoe UI&quot;;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+/* Styl dla lewego panelu */
+#l_dol, #l_gora {
+    background-color: #1A7466;
+    color: #FFFFFF;
+}
+#lbl_l_dol, #lbl_l_gora {
+    background-color: #1A7466;
+    color: #FFFFFF;
+}
+/* Styl dla prawego panelu */
+#p_dol, #p_gora,#p_gora2 {
+    background-color: #F0F0F0;
+    color: FFFFFF;
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+/* Styl dla pól tekstowych */
+QLineEdit {
+    border: none;
+    padding: 5px;
+    font-size: 14px;
+    background-color: #F0F0F0;/* Jasnoszary */
+    border-bottom: 1px solid #C4C5CD; /* Podkreślenie szare*/
+}
+
+QLineEdit:focus {
+    background-color: #FFFFFF; /* Biały po naciśnięciu */
+    border-bottom: 2px solid #B2CF65; /* Podkreślenie jasnozielone */
+}
+
+
+/* /////////////////////////////////////////////////////////////////////////////////////////////////
+/* Styl dla przycisku logowania -ZALOGUJ*/
+#btn_zaloguj {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#btn_zaloguj .QPushButton:hover  {
+    background-color: #B2CF65;
+}
+
+#lbl_l_dol{ 
+	Font-family: 'Arial'; 
+	font-size: 14px;
+ 	color: #FFFFFF;
+	font-style: italic;
+}
+
+#l_opis{ 
+    background-color: #F0F0F0;
+	font-size: 20px;
+ 	color: #000000;
+	font-weight: bold;
+	padding-left :10px;
+}
+
+</string>
+   </property>
+   <widget class="QFrame" name="bgApp">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>780</width>
+      <height>559</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+      <horstretch>80</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::NoFrame</enum>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QFrame" name="lewe">
+       <property name="minimumSize">
+        <size>
+         <width>312</width>
+         <height>559</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="l_gora">
+          <property name="minimumSize">
+           <size>
+            <width>312</width>
+            <height>223</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <widget class="QLabel" name="lbl_l_gora">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>161</width>
+             <height>17</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>MINI BILING</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="l_dol">
+          <property name="minimumSize">
+           <size>
+            <width>312</width>
+            <height>336</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <widget class="QLabel" name="lbl_l_dol">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>179</y>
+             <width>288</width>
+             <height>151</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="prawe">
+       <property name="minimumSize">
+        <size>
+         <width>468</width>
+         <height>559</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QFrame" name="p_gora2">
+          <property name="minimumSize">
+           <size>
+            <width>468</width>
+            <height>28</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>468</width>
+            <height>28</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>0</number>
+           </property>
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btn_close">
+             <property name="minimumSize">
+              <size>
+               <width>28</width>
+               <height>28</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>28</width>
+               <height>28</height>
+              </size>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::NoFocus</enum>
+             </property>
+             <property name="text">
+              <string>PushButton</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="p_gora">
+          <property name="minimumSize">
+           <size>
+            <width>468</width>
+            <height>195</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <widget class="QLabel" name="l_opis">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>150</y>
+             <width>311</width>
+             <height>41</height>
+            </rect>
+           </property>
+           <property name="text">
+            <string>Zaloguj się do swojego konta</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+        <item>
+         <widget class="QFrame" name="p_dol">
+          <property name="minimumSize">
+           <size>
+            <width>468</width>
+            <height>336</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+          <widget class="QLineEdit" name="password">
+           <property name="geometry">
+            <rect>
+             <x>1</x>
+             <y>40</y>
+             <width>468</width>
+             <height>45</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>468</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>-1</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="echoMode">
+            <enum>QLineEdit::Normal</enum>
+           </property>
+           <property name="placeholderText">
+            <string>Hasło</string>
+           </property>
+          </widget>
+          <widget class="QLineEdit" name="login">
+           <property name="geometry">
+            <rect>
+             <x>1</x>
+             <y>1</y>
+             <width>468</width>
+             <height>45</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>468</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>468</width>
+             <height>45</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>Segoe UI</family>
+             <pointsize>-1</pointsize>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="placeholderText">
+            <string>Login</string>
+           </property>
+          </widget>
+          <widget class="QPushButton" name="btn_zaloguj">
+           <property name="geometry">
+            <rect>
+             <x>20</x>
+             <y>110</y>
+             <width>111</width>
+             <height>51</height>
+            </rect>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>40</height>
+            </size>
+           </property>
+           <property name="sizeIncrement">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="baseSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="focusPolicy">
+            <enum>Qt::NoFocus</enum>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="text">
+            <string>ZALOGUJ</string>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
