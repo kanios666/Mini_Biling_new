@@ -1,10 +1,14 @@
 #main.py
 import sys
 from PySide6.QtWidgets import QApplication
-from app.controllers.main_controller import MainController
+from controllers.login_controller import LoginController
 
 if __name__ == "__main__":
     app = QApplication([])
-    controller = MainController()
+    controller = LoginController()
     controller.show_main_window()
     sys.exit(app.exec())
+
+
+
+

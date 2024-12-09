@@ -1,5 +1,27 @@
 # app/controllers/main_controller.py
+
+from app.views.custom_main_window import CustomMainWindow
+class MainController:
+    def __init__(self):
+        self.ui = CustomMainWindow()
+
+    def show_main_window(self):
+        self.ui.show() 
+
+""" 
+from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QMainWindow
+from app.views.main_window import Ui_MainWindow
+class MainController(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+        self.setWindowFlags(Qt.FramelessWindowHint)  # Bez obramowania
+        self.setAttribute(Qt.WA_TranslucentBackground)  # Przezroczyste tło
+
+ """
+""" from PySide6.QtWidgets import QMainWindow
 from app.views.main_window_c import Ui_MainWindow
 from app.utilities.config_loader_json import Settings # Import Settings 
 
@@ -8,7 +30,7 @@ class MainController(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
-
+ """
 # Pozostałe ustawienia  
         
         
@@ -31,4 +53,3 @@ class MainController(QMainWindow):
                 self.setStyleSheet(stylesheet) """
 
 
-#Qt.FramelessWindowHint usuwaniue obramowania
