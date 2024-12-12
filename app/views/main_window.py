@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'main_windowJUsdnx.ui'
+## Form generated from reading UI file 'main_window_newhsYdGn.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.4.3
 ##
@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QHBoxLayout,
     QLabel, QMainWindow, QPushButton, QSizePolicy,
-    QSpacerItem, QStatusBar, QVBoxLayout, QWidget)
+    QSpacerItem, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -29,43 +29,7 @@ class Ui_MainWindow(object):
         self.styl = QWidget(MainWindow)
         self.styl.setObjectName(u"styl")
         self.styl.setMinimumSize(QSize(940, 668))
-        self.styl.setStyleSheet(u"\n"
-"#MainWindow, #styl, #BgApp {\n"
-"    background-color: transparent;\n"
-"    border-radius: 10px; \n"
-"     /*zaokr\u0105glenia*/\n"
-"}\n"
-" #leftMenu, #lmTop{\n"
-"	border-top-left-radius: 10px; \n"
-"}\n"
-"#leftMenu, #lm_bottom{\n"
-"	border-bottom-left-radius: 10px; \n"
-"}\n"
-"#central, #statusBar{\n"
-"	border-bottom-right-radius: 10px;\n"
-"}\n"
-" #toolBarArea, #central,#top_btns {\n"
-"	border-top-right-radius: 10px;\n"
-"}\n"
-"\n"
-"/*#Wyglad wewn\u0119trznych okien*/\n"
-"#leftMenu, #rightMenu {\n"
-"    background-color: #1A7466;\n"
-"}\n"
-"#central {\n"
-"   background-color: #F0F0F0;\n"
-"}\n"
-"#toolBarArea {\n"
-"	background-color: #1A7466;\n"
-"}\n"
-"\n"
-"/*Stopka*/\n"
-"#statusBar{\n"
-"	background-color: #000000;\n"
-"}\n"
-"#lbl_db_status, #lbl_autor, #lbl_ver{\n"
-"	color: #FFFFFF;\n"
-"}")
+        self.styl.setStyleSheet(u"")
         self.verticalLayout = QVBoxLayout(self.styl)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -219,46 +183,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.toolBar)
 
-        self.top_btns = QFrame(self.toolBarArea)
-        self.top_btns.setObjectName(u"top_btns")
-        self.top_btns.setMinimumSize(QSize(0, 60))
-        self.top_btns.setMaximumSize(QSize(120, 60))
-        self.top_btns.setFrameShape(QFrame.NoFrame)
-        self.horizontalLayout_4 = QHBoxLayout(self.top_btns)
-        self.horizontalLayout_4.setSpacing(0)
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.horizontalLayout_4.setContentsMargins(0, 0, 9, 0)
-        self.btn_process = QPushButton(self.top_btns)
-        self.btn_process.setObjectName(u"btn_process")
-        self.btn_process.setMinimumSize(QSize(28, 28))
-        self.btn_process.setMaximumSize(QSize(28, 28))
-
-        self.horizontalLayout_4.addWidget(self.btn_process, 0, Qt.AlignTop)
-
-        self.btn_minimize = QPushButton(self.top_btns)
-        self.btn_minimize.setObjectName(u"btn_minimize")
-        self.btn_minimize.setMinimumSize(QSize(28, 28))
-        self.btn_minimize.setMaximumSize(QSize(28, 28))
-
-        self.horizontalLayout_4.addWidget(self.btn_minimize, 0, Qt.AlignTop)
-
-        self.btn_maximize = QPushButton(self.top_btns)
-        self.btn_maximize.setObjectName(u"btn_maximize")
-        self.btn_maximize.setMinimumSize(QSize(28, 28))
-        self.btn_maximize.setMaximumSize(QSize(28, 28))
-
-        self.horizontalLayout_4.addWidget(self.btn_maximize, 0, Qt.AlignTop)
-
-        self.btn_close = QPushButton(self.top_btns)
-        self.btn_close.setObjectName(u"btn_close")
-        self.btn_close.setMinimumSize(QSize(28, 28))
-        self.btn_close.setMaximumSize(QSize(28, 28))
-
-        self.horizontalLayout_4.addWidget(self.btn_close, 0, Qt.AlignTop)
-
-
-        self.horizontalLayout_3.addWidget(self.top_btns)
-
 
         self.verticalLayout_2.addWidget(self.toolBarArea)
 
@@ -344,14 +268,7 @@ class Ui_MainWindow(object):
         self.sizegrip.setFrameShadow(QFrame.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.sizegrip)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.lbl_sizegrip = QLabel(self.sizegrip)
-        self.lbl_sizegrip.setObjectName(u"lbl_sizegrip")
-        self.lbl_sizegrip.setMinimumSize(QSize(24, 24))
-        self.lbl_sizegrip.setMaximumSize(QSize(24, 24))
-
-        self.verticalLayout_7.addWidget(self.lbl_sizegrip)
-
+        self.verticalLayout_7.setContentsMargins(0, 0, 10, 10)
 
         self.horizontalLayout_6.addWidget(self.sizegrip)
 
@@ -365,9 +282,6 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.BgApp)
 
         MainWindow.setCentralWidget(self.styl)
-        self.statusBar_2 = QStatusBar(MainWindow)
-        self.statusBar_2.setObjectName(u"statusBar_2")
-        MainWindow.setStatusBar(self.statusBar_2)
 
         self.retranslateUi(MainWindow)
 
@@ -382,15 +296,10 @@ class Ui_MainWindow(object):
         self.btn_rozliczenia.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.btn_settings_user.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.lbl_tB.setText(QCoreApplication.translate("MainWindow", u"Tytul", None))
-        self.btn_process.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.btn_minimize.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.btn_maximize.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
-        self.btn_close.setText(QCoreApplication.translate("MainWindow", u"PushButton", None))
         self.lbl_main_content_frame.setText(QCoreApplication.translate("MainWindow", u"glowne Okno", None))
-        self.lbl_rightMenu.setText(QCoreApplication.translate("MainWindow", u"prawe Menu", None))
+        self.lbl_rightMenu.setText(QCoreApplication.translate("MainWindow", u"Lista zada\u0144", None))
         self.lbl_autor.setText(QCoreApplication.translate("MainWindow", u" By: Kanios", None))
         self.lbl_db_status.setText(QCoreApplication.translate("MainWindow", u" db: status", None))
         self.lbl_ver.setText(QCoreApplication.translate("MainWindow", u"ver. 0.0.1", None))
-        self.lbl_sizegrip.setText(QCoreApplication.translate("MainWindow", u"SG", None))
     # retranslateUi
 

@@ -25,8 +25,10 @@ https://github.com/zhiyiYo/PyQt-Frameless-Window/tree/PySide6
 pip install PySideSix-Frameless-Window
 
 12. Gotowy kod dopoprawy 
+
 https://github.com/kanios666/Mini_Biling_new/blob/main/app/views/main_window.py
-https://github.com/kanios666/Mini_Biling_new/blob/main/app/controllers/main_controller_test.py
+https://github.com/kanios666/Mini_Biling_new/blob/main/app/views/custom_main_window.py
+https://github.com/kanios666/Mini_Biling_new/blob/main/app/controllers/main_controller.py
 https://github.com/kanios666/Mini_Biling_new/blob/main/main_docelowy.py
 
 

@@ -1,45 +1,28 @@
-from qframelesswindow import FramelessMainWindow, TitleBarBase
-from qframelesswindow.titlebar import MinimizeButton, MaximizeButton, CloseButton
+#app\views\custom_main_window.py
+from qframelesswindow import FramelessMainWindow
+from .custom_title_bar import CustomTitleBar
 from .main_window import Ui_MainWindow
-from PySide6.QtWidgets import QSizeGrip
+from PySide6.QtWidgets import QApplication,QSizeGrip
+
 
 class CustomMainWindow(FramelessMainWindow, Ui_MainWindow):
-    #Klasa dziedzicząca po FramelessMainWindow z dostosowaną obsługą paska tytułowego, przycisków i przeciągania okna.
     def __init__(self, parent=None):
         super().__init__(parent)
         self.setupUi(self)
         self.initUI()
+        self.setTitleBar(CustomTitleBar(self))
+        self.move(QApplication.primaryScreen().availableGeometry().center() - self.rect().center())
 
-    def initUI(self):
-        # Ukrywanie paska tytułu
-        self.titleBar.hide()
-        
-        # Styl i funkcjonalność przycisków na podstawie dziedziczenia z FramelessMainWindow
-        self.btn_close.setStyleSheet(CloseButton(self).styleSheet())
-        #self.btn_minimize.setStyleSheet(MinimizeButton(self).styleSheet())
-        #self.btn_maximize.setStyleSheet(MaximizeButton(self).styleSheet())
+    def initUI(self):   
+        self.titleBar.maxBtn.hide()
 
-        # Podłączanie sygnałów do przycisków
-        self.btn_close.clicked.connect(self.close)
-        self.btn_minimize.clicked.connect(self.showMinimized)
-        self.btn_maximize.clicked.connect(self.toggle_maximize)
-        
-        # Przypisanie istniejących przycisków z TitleBarBase do funkcji zamykania, maksymalizacji, minimalizacji
-        self.btn_close = self.titleBar.closeBtn
-        self.minimize_button = self.titleBar.minBtn
-        self.maximize_button = self.titleBar.maxBtn
-        
-        #Dodanie istniejącego sizeGrip w głównym interfejsie
+
+
+
+        # Dodanie QSizeGrip do głównego okna
         self.sizegrip = QSizeGrip(self)
-        self.sizegrip.setStyleSheet("background: transparent;")
-        self.sizegrip.setParent(self)
-        self.sizegrip.raise_()  # Ustawienie sizeGrip na wierzchu 
-        
-        """        
-        # Ustawienia SizeGrip na podstawie istniejącego QFrame
-        self.sizegrip.setStyleSheet("background: transparent;")
-        self.sizegrip.raise_()  # Upewnij się, że sizeGrip znajduje się na wierzchu innych elementów
-        self.statusBar.setContentsMargins(4, 4, 4, 4)  # Dostosowanie marginesów """
+        self.sizegrip.setFixedSize(24, 24)  # Ustawienie rozmiaru na 24x24
+        self.sizegrip.raise_()
         
         # Przypisywanie zdarzeń z toolBarArea do metod TitleBarBase
         self.toolBarArea.installEventFilter(self.titleBar)  # Przekierowanie obsługi zdarzeń
@@ -50,9 +33,7 @@ class CustomMainWindow(FramelessMainWindow, Ui_MainWindow):
         # Przeciąganie okna obsługiwane przez TitleBarBase
         self.titleBar.setDoubleClickEnabled(True)  # Włączenie obsługi podwójnego kliknięcia
         
-    def toggle_maximize(self):
-            #Deleguje wywołanie do ukrytej metody toggleMaxState w TitleBarBase, aby uniknąć efektów ubocznych związanych z dziedziczeniem.
-            TitleBarBase._TitleBarBase__toggleMaxState(self.titleBar)
-            
-    def Close_btn(self):
-            CloseButton(self.titleBar)
+    def resizeEvent(self, event):
+        super().resizeEvent(event)
+        self.sizegrip.move(self.width() - self.sizegrip.width() , self.height() - self.sizegrip.height() )
+

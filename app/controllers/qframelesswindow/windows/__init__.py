@@ -192,6 +192,7 @@ class AcrylicWindow(WindowsFramelessWindow):
         self.windowEffect.setAcrylicEffect(self.winId())
         if win_utils.isGreaterEqualWin11():
             self.windowEffect.addShadowEffect(self.winId())
+            
 
     def nativeEvent(self, eventType, message):
         """ Handle the Windows message """
@@ -232,18 +233,5 @@ class WindowsFramelessDialog(WindowsFramelessWindowBase, QDialog):
         self._initFrameless()
         self.titleBar.minBtn.hide()
         self.titleBar.maxBtn.hide()
-        self.titleBar.setDoubleClickEnabled(False)
-        self.windowEffect.disableMaximizeButton(self.winId())
-
-
-class WindowsFramelessUI(WindowsFramelessWindowBase, QDialog):
-    """ Moja zmodyfikowana"""
-
-    def __init__(self, parent=None):
-        super().__init__(parent=parent)
-        self._initFrameless()
-        self.titleBar.minBtn.hide()
-        self.titleBar.maxBtn.hide()
-        self.titleBar.closeBtn.hide()
         self.titleBar.setDoubleClickEnabled(False)
         self.windowEffect.disableMaximizeButton(self.winId())
