@@ -1,2 +1,86 @@
-# settings/themes/dark_theme.qss 
-QPushButton { background-color: #333; color: #fff; }
+/* Główne tło aplikacji */
+QWidget {
+    background-color: #F2F2F2;
+    color: #333333;
+}
+
+/* Nawigacja boczna */
+QWidget#sidebar {
+    background-color: #E0E0E0;
+    border-right: 1px solid #C0C0C0;
+}
+
+QLabel#title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* Przyciski */
+QPushButton {
+    background-color: #0078D7;
+    color: #FFFFFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+
+QPushButton:hover {
+    background-color: #008CFF;
+}
+
+QPushButton:disabled {
+    background-color: #E0E0E0;
+    color: #888888;
+}
+
+/* Pola wyboru */
+QCheckBox {
+    spacing: 5px;
+    color: #333333;
+}
+
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+}
+
+QCheckBox::indicator:unchecked {
+    border: 1px solid #C0C0C0;
+    background-color: #FFFFFF;
+}
+
+QCheckBox::indicator:checked {
+    border: 1px solid #0078D7;
+    background-color: #0078D7;
+}
+
+/* Linie separatorów */
+QFrame#line {
+    border: 1px solid #D0D0D0;
+}
+
+/* Pola tekstowe */
+QLineEdit {
+    background-color: #FFFFFF;
+    border: 1px solid #C0C0C0;
+    padding: 4px;
+    border-radius: 4px;
+}
+
+/* Listy i pola rozwijane */
+QListWidget, QComboBox {
+    background-color: #FFFFFF;
+    border: 1px solid #C0C0C0;
+    color: #333333;
+}
+
+QComboBox::drop-down {
+    border: none;
+}
+
+QComboBox QAbstractItemView {
+    border: 1px solid #C0C0C0;
+    selection-background-color: #0078D7;
+    selection-color: #FFFFFF;
+}

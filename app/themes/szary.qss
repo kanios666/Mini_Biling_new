@@ -1,0 +1,125 @@
+/* Main_Content_Area */
+#Main_Content_Area {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* statusBar */
+#statusBar {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    color: #333;
+}
+
+/* leftMenu */
+#leftMenu {
+    background-color: #333;
+    border: 1px solid #ccc;
+    padding: 5px;
+    color: #fff;
+}
+
+/* toolBarArea */
+#toolBarArea {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* m_middle */
+#m_middle {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* m_middle QPushButton */
+#m_middle QPushButton {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    color: #333;
+}
+
+#m_middle QPushButton:pressed {
+    background-color: #bbb;
+    border: 1px solid #999;
+}
+
+#m_middle QPushButton:hover {
+    background-color: #ddd;
+    border: 1px solid #aaa;
+}
+
+#m_middle QPushButton:focus {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+#m_middle QPushButton:disabled {
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    color: #666;
+}
+
+/* m_top */
+#m_top {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* m_top QLabel */
+#m_top QLabel {
+    color: #333;
+}
+
+/* m_bottom */
+#m_bottom {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* m_bottom QPushButton */
+#m_bottom QPushButton {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+    color: #333;
+}
+
+#m_bottom QPushButton:pressed {
+    background-color: #bbb;
+    border: 1px solid #999;
+}
+
+#m_bottom QPushButton:hover {
+    background-color: #ddd;
+    border: 1px solid #aaa;
+}
+
+#m_bottom QPushButton:focus {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
+
+#m_bottom QPushButton:disabled {
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    color: #666;
+}
+
+/* m_right */
+#m_right {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+/* m_right QLabel */
+#m_right QLabel {
+    color: #333;
+}

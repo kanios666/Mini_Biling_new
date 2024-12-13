@@ -1,0 +1,24 @@
+/* app/themes/default.qss */
+#styl, #BgApp {
+    background-color: transparent;
+    border: 1px groove black;
+}
+
+/*#Wyglad wewnętrznych okien*/
+#leftMenu, #rightMenu {
+    background-color: #1A7466;
+}
+#central {
+   background-color: #F0F0F0;
+}
+#toolBarArea {
+	background-color: #1A7466;
+}
+
+/*Stopka*/
+#statusBar{
+	background-color: #000000;
+}
+#lbl_db_status, #lbl_autor, #lbl_ver{
+	color: #FFFFFF;
+}
